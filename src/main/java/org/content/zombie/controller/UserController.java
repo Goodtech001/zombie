@@ -21,7 +21,7 @@ public class UserController {
     public Flux<User> getAllUsers() { return Flux.fromIterable(users); }
 
     @PostMapping("/create-user")
-    public Mono<User> createUser(@RequestBody User user){
+    public Mono<User> createUser(@RequestParam User user){
         users.add(user);
         return Mono.just(user);
     }
